@@ -1,0 +1,19 @@
+# dependencias y builds
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+*.local
+
+# capturas y JSON que regeneran scripts/verificar.mjs y verificar-sesion.mjs
+docs/resultados/
+
+# logs
+*.log
+
+# editor y sistema
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
