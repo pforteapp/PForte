@@ -21,10 +21,13 @@ alumnos).
 ```bash
 npm run dev      # servidor de desarrollo (Vite)
 npm run build    # tsc -b && vite build
-npm run check    # tsc -b && node scripts/verificar.mjs  ← la puerta de cada tarea
+npm run check    # tsc -b + verificar.mjs + verificar-sesion.mjs  ← la puerta de cada tarea
 npm run lint     # oxlint
-node scripts/verificar-sesion.mjs   # el JSON de sesión, campo por campo
 ```
+
+`verificar.mjs` prueba la partitura, el ritmo de las tapas y el generador;
+`verificar-sesion.mjs`, el JSON de sesión campo por campo. Cada uno se puede
+correr suelto con `node scripts/<nombre>.mjs`.
 
 Los dos scripts de verificación levantan su propio servidor de Vite (no hace
 falta `npm run dev` aparte) y tocan el ejercicio con el teclado de PC en

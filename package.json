@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "tsc -b && node scripts/verificar.mjs",
+    "check": "tsc -b && node scripts/verificar.mjs && node scripts/verificar-sesion.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
