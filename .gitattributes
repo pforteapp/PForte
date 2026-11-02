@@ -4,3 +4,5 @@
 *.mxl binary
 *.wav binary
 *.bin binary
+*.bat text eol=crlf
+*.jar binary
