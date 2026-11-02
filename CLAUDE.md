@@ -11,8 +11,8 @@ alumnos).
 
 ## Repositorios
 
-- Este repo es el producto: `JuanDMalaverO/PForte`
-- El prototipo verificado vive aparte: `JuanDMalaverO/PForte-Prototype`. De ahí
+- Este repo es el producto: `pforteapp/PForte`
+- El prototipo verificado vive aparte: `pforteapp/PForte-Prototype`. De ahí
   salen los módulos del núcleo. **Se portan, no se regeneran** — ese código ya
   está medido y sus rarezas están documentadas en los `docs/` de aquel repo.
 
@@ -23,6 +23,7 @@ npm run dev      # servidor de desarrollo (Vite)
 npm run build    # tsc -b && vite build
 npm run check    # tsc -b + verificar.mjs + verificar-sesion.mjs  ← la puerta de cada tarea
 npm run lint     # oxlint
+npm run android:apk   # web + cap sync + APK de debug (ver docs/ANDROID.md)
 ```
 
 `verificar.mjs` prueba la partitura, el ritmo de las tapas y el generador;
@@ -78,8 +79,11 @@ No se deducen leyendo el código y romperlas no produce ningún error:
 - **No se vende en Estados Unidos.** La patente US 9,767,704 (Johns Hopkins,
   vigente hasta oct 2033) cubre el mecanismo y solo aplica allá.
 - **Web MIDI no existe en Firefox ni Safari.** En Android se usa a través del
-  WebView de Capacitor, y eso está sin verificar: es justo lo que prueba el
-  Hito 1.
+  WebView de Capacitor, sin plugin ni permisos: WebView concede MIDI solo si no
+  se pide SysEx, así que no pidas SysEx. Falta ver el WebView con un teclado
+  real: `docs/PRUEBA-ANDROID.md`.
+- **En `android/` no se cambia código nativo** sin discutirlo: es la plantilla de
+  Capacitor 8.5.3 y por eso la versión va fijada. Build: `docs/ANDROID.md`.
 
 ## Diseño
 
